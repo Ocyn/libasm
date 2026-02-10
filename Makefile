@@ -1,18 +1,18 @@
 NAME = libasm.a
 
-SRCC =  helloworld.s
+SRCC =  libasm/ft_strlen.s
 
-SRCO = $(SRCC:.c=.o)
+SRCO = $(SRCC:.s=.o)
 
-CFLAGS = 
+CFLAGS = -f elf64
 
 all : $(SRCC) $(NAME)
 
 %.o : %.s
-	nasm $(CFLAGS) -c $< -o ${<:.c=.o}
+	nasm $(CFLAGS) $< -o ${<:.s=.o}
 
 $(NAME) : $(SRCO)
-	ar crs $(NAME) $(SRCO)
+	ar rcs $(NAME) $(SRCO)
 
 re : fclean $(NAME)
 

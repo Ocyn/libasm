@@ -1,13 +1,18 @@
 #include <stdio.h>
+#include <string.h>
+
+size_t ft_strlen(const char *s);
 
 int main()
 {
 	printf("Testing LIBASM\n");
-	printf("FT_STRLEN: %zu\n", ft_strlen("Hello, World!"));
-	printf("FT_STRCPY: %s\n", ft_strcpy((char[20]){0}, "Hello, World!"));
-	printf("FT_STRCMP: %d\n", ft_strcmp("Hello", "Hello"));
-	printf("FT_WRITE: %zd\n", ft_write(1, "Hello, World!\n", 14));
-	printf("FT_READ: %zd\n", ft_read(0, (char[20]){0}, 20));
-	printf("FT_STRDUP: %s\n", ft_strdup("Hello, World!"));
+	int asm_ver = ft_strlen("Hello World");
+	printf("ASM strlen: %d\n", asm_ver);
+	int original_ver = strlen("Hello World");
+	printf("Original strlen: %d\n", original_ver);
+	if (asm_ver == original_ver)
+		printf("ASM strlen is correct!\n");
+	else
+		printf("ASM strlen is incorrect!\n");
 	return 0;
 }
