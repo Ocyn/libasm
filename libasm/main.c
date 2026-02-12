@@ -3,6 +3,7 @@
 
 size_t ft_strlen(const char *s);
 char *ft_strcpy(char *dst, const char *src);
+int ft_strcmp(const char *s1, const char *s2);
 
 int main()
 {
@@ -24,5 +25,22 @@ int main()
 		printf("ASM strcpy is correct!\n");
 	else
 		printf("ASM strcpy is incorrect!\n");
+	printf("\n");
+	printf("Testing ft_strcmp:\n");
+	char s1[] = "Hello";
+	char s2[] = "Hello"; 
+	char s3[] = "World";
+	int cmp1 = ft_strcmp(s1, s2);
+	int cmp2 = ft_strcmp(s1, s3);
+	printf("strcmp(s1, s2) = %d\n", cmp1);
+	printf("strcmp(s1, s3) = %d\n", cmp2);
+	if (cmp1 == 0)
+		printf("ASM strcmp is correct for equal strings!\n");
+	else
+		printf("ASM strcmp is incorrect for equal strings!\n");
+	if (cmp2 != 0)
+		printf("ASM strcmp is correct for different strings!\n");
+	else
+		printf("ASM strcmp is incorrect for different strings!\n");
 	return 0;
 }
