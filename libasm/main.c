@@ -14,5 +14,14 @@ int main()
 		printf("ASM strlen is correct!\n");
 	else
 		printf("ASM strlen is incorrect!\n");
+	// printf("Testing testing null entry\n");
+	// asm_ver = ft_strlen(NULL);
+	// printf("ASM strlen with NULL: %d\n", asm_ver); 
+	// original_ver = strlen(NULL); 
+	// printf("Original strlen with NULL: %d\n", original_ver); 
+	// if (asm_ver == original_ver)
+	// 	printf("ASM strlen with NULL is correct!\n");
+	// else
+	// printf("ASM strlen with NULL is incorrect!\n");
 	return 0;
 }
