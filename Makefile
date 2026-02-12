@@ -1,6 +1,7 @@
 NAME = libasm.a
 
-SRCC =  libasm/ft_strlen.s
+SRCC =  libasm/ft_strlen.s \
+		libasm/ft_strcpy.s
 
 SRCO = $(SRCC:.s=.o)
 
@@ -18,8 +19,12 @@ re : fclean $(NAME)
 
 fclean : clean
 	rm -f $(NAME)
+	rm -f test
 
 clean :
 	rm -f $(SRCO)
 
-.PHONY: all re fclean clean
+test: all
+	gcc -Wall -Wextra -no-pie -g libasm/main.c -L. -lasm -o test
+
+.PHONY: all re fclean clean test
