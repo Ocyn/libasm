@@ -2,7 +2,10 @@ NAME = libasm.a
 
 SRCC =  libasm/ft_strlen.s \
 		libasm/ft_strcpy.s \
-		libasm/ft_strcmp.s
+		libasm/ft_strcmp.s \
+		libasm/ft_write.s \
+		libasm/ft_read.s \
+# 		libasm/ft_strdup.s
 
 SRCO = $(SRCC:.s=.o)
 
