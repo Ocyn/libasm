@@ -17,7 +17,7 @@ ft_strdup:
 	
 .cpy:
 	mov rdi, rax
-	pop rsi ; restore stirng from stack to rdi
+	pop rsi ; restore string from stack to rdi
 	call ft_strcpy
 	jmp .end
 
