@@ -23,10 +23,8 @@ ft_strdup:
 	jmp .end
 
 .error:
-	mov rdi, rax
-	call __errno_location
-	mov [rax], rdi
-	mov rax, -1
+	; errno already set by malloc
+	mov rax, 0
 	ret
 
 .end:
