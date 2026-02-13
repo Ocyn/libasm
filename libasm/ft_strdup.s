@@ -11,7 +11,7 @@ ft_strdup:
 	push rdi ; save string in stack
 	mov rdi, rax ; copy strlen return in rdi (1st argument)
 	inc rdi
-	call malloc
+	call malloc wrt ..plt
 	cmp rax, 0
 	je .error
 	jmp .cpy
