@@ -50,6 +50,14 @@ int main()
 		printf("ASM strdup is correct!\n");
 	else
 		printf("ASM strdup is incorrect!\n");
+	printf("\nTesting ft_strdup with empty string:\n");	
+	char empty[] = "";
+	char *dup_empty = ft_strdup(empty);
+	printf("ASM strdup of empty string: '%s'\n", dup_empty);
+	if (strcmp(dup_empty, empty) == 0)
+		printf("ASM strdup is correct for empty string!\n");
+	else
+		printf("ASM strdup is incorrect for empty string!\n");
 	printf("\nAll tests completed.\n");
 	return 0;
 }
