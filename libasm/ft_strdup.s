@@ -6,6 +6,7 @@ extern ft_strlen
 extern ft_strcpy
 
 ft_strdup:
+	xor rax, rax
 	call ft_strlen
 	push rdi ; save string in stack
 	mov rdi, rax ; copy strlen return in rdi (1st argument)
