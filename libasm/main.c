@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
-size_t ft_strlen(const char *s);
-char *ft_strcpy(char *dst, const char *src);
-int ft_strcmp(const char *s1, const char *s2);
+size_t	ft_strlen(const char *s);
+char	*ft_strcpy(char *dst, const char *src);
+int		ft_strcmp(const char *s1, const char *s2);
+char	*ft_strdup(const char *s);
 
 int main()
 {
@@ -42,5 +43,13 @@ int main()
 		printf("ASM strcmp is correct for different strings!\n");
 	else
 		printf("ASM strcmp is incorrect for different strings!\n");
+	printf("\nTesting ft_strdup:\n");
+	char *dup = ft_strdup(src);
+	printf("ASM strdup: %s\n", dup);
+	if (strcmp(dup, src) == 0)
+		printf("ASM strdup is correct!\n");
+	else
+		printf("ASM strdup is incorrect!\n");
+	printf("\nAll tests completed.\n");
 	return 0;
 }
