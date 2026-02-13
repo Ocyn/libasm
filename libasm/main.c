@@ -43,7 +43,7 @@ int main()
 
 		printf("Testing ft_strcpy with 'Hello World':\n");
 		char src[] = "Hello World";
-		char dst[20];
+		char dst[50];
 		ft_strcpy(dst, src);
 		printf("ASM strcpy: %s\n", dst);
 		if (strcmp(dst, src) == 0)
@@ -134,8 +134,9 @@ int main()
 	printf("\nTesting ft_read:\n");
 
 	{
+		char test_file[] = "Makefile";
 		printf("Testing ft_read by reading from a file:\n");
-		int fd = open("test.txt", O_RDONLY);
+		int fd = open(test_file, O_RDONLY);
 		if (fd == -1)	{
 			perror("Failed to open test.txt");
 		} else {
@@ -159,7 +160,7 @@ int main()
 		else
 			printf("ASM ft_read did not handle invalid file descriptor correctly!\n");
 		printf("\nTesting ft_read with zero bytes:\n");
-		fd = open("test.txt", O_RDONLY);
+		fd = open(test_file, O_RDONLY);
 		if (fd == -1)	{
 			perror("Failed to open test.txt");
 		} else {
@@ -172,7 +173,7 @@ int main()
 			close(fd);
 		}
 		printf("\nTesting ft_read with NULL buffer:\n");
-		fd = open("test.txt", O_RDONLY);
+		fd = open(test_file, O_RDONLY);
 		if (fd == -1)	{
 			perror("Failed to open test.txt");
 		} else {
