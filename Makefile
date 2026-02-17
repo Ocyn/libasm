@@ -29,6 +29,6 @@ clean :
 	rm -f $(SRCO)
 
 test: all
-	gcc -Wall -Wextra -g libasm/main.c -L. -lasm -o test
+	gcc -Wall -Wextra -g libasm/main.c -L. -lasm -o test && ./test
 
 .PHONY: all re fclean clean test

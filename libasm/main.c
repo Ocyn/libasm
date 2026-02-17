@@ -26,6 +26,16 @@ int main()
 			printf("ASM strlen is correct!\n");
 		else
 			printf("ASM strlen is incorrect!\n");	
+		printf("\nTesting ft_strlen with long string:\n");
+		char long_str[] = "This is a very long string to test ft_strlen function.";
+		asm_ver = ft_strlen(long_str);
+		printf("ASM strlen of long string: %d\n", asm_ver);
+		original_ver = strlen(long_str);
+		printf("Original strlen of long string: %d\n", original_ver);
+		if (asm_ver == original_ver)
+			printf("ASM strlen is correct for long string!\n");
+		else
+			printf("ASM strlen is incorrect for long string!\n");
 		printf("\nTesting ft_strlen with empty string:\n");
 		asm_ver = ft_strlen("");
 		printf("ASM strlen of empty string: %d\n", asm_ver);
@@ -74,6 +84,7 @@ int main()
 		char s1[] = "Hello";
 		char s2[] = "Hello"; 
 		char s3[] = "World";
+		char s4[] = "Hello World";
 		int cmp1 = ft_strcmp(s1, s2);
 		int cmp2 = ft_strcmp(s1, s3);
 		printf("strcmp(s1, s2) = %d\n", cmp1);
@@ -86,6 +97,20 @@ int main()
 			printf("ASM strcmp is correct for different strings!\n");
 		else
 			printf("ASM strcmp is incorrect for different strings!\n");
+		printf("\nTesting ft_strcmp with 'Hello' and 'Hello World':\n");
+		cmp1 = ft_strcmp(s1, s4);
+		printf("strcmp(s1, s3) = %d\n", cmp1);
+		if (cmp1 != 0)
+			printf("ASM strcmp is correct for different length strings!\n");
+		else
+			printf("ASM strcmp is incorrect for different length strings!\n");
+		printf("\nTesting ft_strcmp with 'Hello World' and 'Hello':\n");
+		cmp1 = ft_strcmp(s4, s1);
+		printf("strcmp(s3, s1) = %d\n", cmp1);
+		if (cmp1 != 0)
+			printf("ASM strcmp is correct for different length strings!\n");
+		else
+			printf("ASM strcmp is incorrect for different length strings!\n");
 		printf("\nTesting ft_strcmp with empty strings:\n");
 		char empty1[] = "";
 		char empty2[] = "";
@@ -95,6 +120,20 @@ int main()
 			printf("ASM strcmp is correct for empty strings!\n");
 		else
 			printf("ASM strcmp is incorrect for empty strings!\n");
+		printf("\nTesting ft_strcmp with 'Hello' and empty string:\n");
+		cmp1 = ft_strcmp(s1, empty1);
+		printf("strcmp(s1, empty1) = %d\n", cmp1);
+		if (cmp1 != 0)
+			printf("ASM strcmp is correct for non-empty and empty string!\n");
+		else
+			printf("ASM strcmp is incorrect for non-empty and empty string!\n");
+		printf("\nTesting ft_strcmp with empty string and 'Hello':\n");
+		cmp1 = ft_strcmp(empty1, s1);
+		printf("strcmp(empty1, s1) = %d\n", cmp1);
+		if (cmp1 != 0)
+			printf("ASM strcmp is correct for empty and non-empty string!\n");
+		else
+			printf("ASM strcmp is incorrect for empty and non-empty string!\n");
 	}
 	printf("\nTesting ft_write:\n");
 
